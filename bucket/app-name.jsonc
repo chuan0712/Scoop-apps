@@ -1,22 +1,16 @@
 {
     // 🔧 说明：这是一个模板文件，根据实际软件需要填写字段或删除不必要的字段
     "##": "This file is a template. Fill the blanks and add or remove fields as necessary.",
-
     // ✅ 软件版本号，建议用完整格式，例如 "1.2.3" 或带构建号的 "1.2.3-4567"
     "version": "",
-
     // ✅ 简短描述软件功能
     "description": "",
-
     // ✅ 软件主页（通常是官网或项目地址）
     "homepage": "",
-
     // ✅ 许可证类型，例如 "MIT", "GPL-3.0-only", "Proprietary" 等
     "license": "",
-
     // 💡 安装后的备注信息（安装完成后会在终端显示）
     "notes": "",
-
     // ✅ 不同架构下的下载链接和 SHA256 校验值（如无 32bit/arm64，可删去对应字段）
     "architecture": {
         "64bit": {
@@ -35,12 +29,10 @@
 
     // ⚙️ 安装前执行的 PowerShell 命令（可为字符串或字符串数组）
     "pre_install": "",
-
     // ⚙️ 安装时执行的脚本（可替代 pre_install）
     "installer": {
         "script": ""     // 安装过程脚本
     },
-
     // ⚙️ 安装后执行的命令（如环境变量提示、配置初始化等）
     "post_install": [
         "",
@@ -51,28 +43,23 @@
     "uninstaller": {
         "script": ""
     },
-
     // ✅ 指定可执行文件或路径，会自动创建 shim（支持字符串或数组）
     "bin": "",
-
     // ✅ 安装后将哪些路径加入环境变量 PATH
     "env_add_path": [
         "",
         ""
     ],
-
     // ✅ 持久化保存的文件夹（会链接到 persist 目录）
     "persist": [
         "",
         ""
     ],
-
     // 🔄 自动检查新版本用，指定检测地址与正则提取版本
     "checkver": {
         "url": "",     // 版本检测来源 URL（如 releases 页面、API）
         "regex": ""    // 用于提取版本的正则表达式
     },
-
     // 🔄 自动更新时使用的字段（常配合 checkver 提取版本和构建新下载链接）
     "autoupdate": {
         "architecture": {
