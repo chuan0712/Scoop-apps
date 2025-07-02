@@ -12,6 +12,8 @@ jobs:
       - uses: actions/checkout@main
       - name: Excavate
         uses: ScoopInstaller/GithubActions@main
+        with:
+          branch: master
         env:
           GITHUB_TOKEN: ${{ secrets.SCOOP_AUTOMATION_PAT }}
           SKIP_UPDATED: 1
