@@ -1,21 +1,19 @@
-name: cleanup-excavator
+name: Cleanup all workflow runs
 
 on:
-  workflow_run:
-    workflows: ["excavator"]  # 👈 必须与你的主 workflow 名称完全一致
-    types:
-      - completed
+  schedule:
+    - cron: '0 2 * * *'   # 每天凌晨 2 点执行（UTC时间，根据需求调整）
 
 jobs:
-  delete_runs:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+  cleanup:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Delete old workflow runs
+      - name: Cleanup all workflow runs
         uses: Mattraks/delete-workflow-runs@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
           retain_days: 0
-          keep_minimum_runs: 10  # ✅ 保留最近 10 条成功记录
+          keep_minimum_runs: 10
+          all: true     # 这个参数让 action 清理所有 workflow 的运行记录
