@@ -39,7 +39,7 @@ Invoke-RestMethod get.scoop.sh | Invoke-Expression
 
 ## ⚙️ 三、自定义安装路径（可选）
 
-若你想将 Scoop 安装到自定义路径，例如 `D:\Scoop`：
+若你想将 Scoop 安装到自定义路径，例如 `C:\Scoop`：
 
 ```powershell
 irm get.scoop.sh -outfile 'install.ps1'
