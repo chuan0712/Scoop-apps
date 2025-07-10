@@ -9,7 +9,6 @@
       "hash": "22a8ad4334d6679e082d7db6f0e766f5ae5948fa7741733cec6b56e789ae581d"
     }
   },
-  "extract_dir": "Chrome",
   "bin": "chrome.exe",
   "shortcuts": [
     [
