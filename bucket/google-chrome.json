@@ -6,10 +6,10 @@
   "architecture": {
     "64bit": {
       "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/Win64_138.0.7204.101_2025-07-10/Win64_138.0.7204.101_2025-07-10.zip",
-      "hash": "22a8ad4334d6679e082d7db6f0e766f5ae5948fa7741733cec6b56e789ae581d"
+      "hash": "22a8ad4334d6679e082d7db6f0e766f5ae5948fa7741733cec6b56e789ae581d",
+      "extract_dir": "build/release/Chrome"
     }
   },
-  "bin": "chrome.exe",
   "shortcuts": [
     [
       "chrome.exe",
@@ -29,9 +29,7 @@
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": [
-          "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/Win64_${version}/Win64_${version}.zip"
-        ]
+        "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/Win64_${version}/Win64_${version}.zip"
       }
     }
   }
