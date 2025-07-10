@@ -14,7 +14,7 @@
   "shortcuts": [
     [
       "chrome.exe",
-      "Google Chrome Portable"
+      "Google Chrome"
     ]
   ],
   "persist": [
@@ -30,7 +30,9 @@
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/Win64_${version}/Win64_${version}.zip"
+        "url": [
+          "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/Win64_${version}/Win64_${version}.zip"
+        ]
       }
     }
   }
