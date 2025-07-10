@@ -1,42 +1,37 @@
 {
-    "version": "138.0.7204.50_2025-06-30",
-    "description": "Google Chrome 便携版，由 zzp198 使用 GitHub Actions 构建。",
-    "homepage": "https://github.com/zzp198/Google-Chrome-Portable",
-    "license": {
-        "identifier": "Freeware"
-    },
-    "architecture": {
-        "64bit": {
-            "url": "https://nightly.link/zzp198/Google-Chrome-Portable/workflows/build/main/Win64_138.0.7204.50_2025-06-30.zip",
-            "hash": ""
-        }
-    },
-    "extract_dir": "Chrome",
-    "bin": "chrome_proxy.exe",
-    "shortcuts": [
-        [
-            "chrome_proxy.exe",
-            "Google Chrome"
-        ]
-    ],
-    "persist": [
-        "Data",
-        "Cache"
-    ],
-    "checkver": {
-        "github": "zzp198/Google-Chrome-Portable",
-        "regex": "Win64_(?<version>\\d+\\.\\d+\\.\\d+\\.\\d+_\\d{4}-\\d{2}-\\d{2})\\.zip"
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://nightly.link/zzp198/Google-Chrome-Portable/workflows/build/main/Win64_${version}.zip"
-            }
-        }
-    },
-    "notes": [
-        "此版本为便携版 Chrome，配置与用户数据将保存在当前目录下的 Data 和 Cache 文件夹中。",
-        "构建来自 GitHub Actions，建议每周检查更新。",
-        "如遇哈希校验失败，请使用 'scoop update --force google-chrome' 强制更新。"
+  "version": "138.0.7204.101_2025-07-10",
+  "description": "Google Chrome Portable",
+  "homepage": "https://www.google.com/chrome/",
+  "license": "Freeware",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/Win64_138.0.7204.101_2025-07-10/Win64_138.0.7204.101_2025-07-10.zip",
+      "hash": "请填写对应的SHA256哈希值"
+    }
+  },
+  "extract_dir": "Chrome",
+  "bin": "chrome.exe",
+  "shortcuts": [
+    [
+      "chrome.exe",
+      "Google Chrome Portable"
     ]
+  ],
+  "persist": [
+    "Data",
+    "Cache"
+  ],
+  "checkver": {
+    "url": "https://api.github.com/repos/chuan0712/Google-Chrome-Portable/releases/latest",
+    "jsonpath": "$.tag_name",
+    "regex": "Win64_(?<version>[\\d.]+_[\\d-]+)",
+    "replace": "${version}"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/Win64_${version}/Win64_${version}.zip"
+      }
+    }
+  }
 }
