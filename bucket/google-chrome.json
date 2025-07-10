@@ -10,15 +10,15 @@
       "extract_dir": "build/release/Chrome"
     }
   },
+  "persist": [
+    "Data",
+    "Cache"
+  ],
   "shortcuts": [
     [
       "chrome.exe",
       "Google Chrome"
     ]
-  ],
-  "persist": [
-    "Data",
-    "Cache"
   ],
   "checkver": {
     "url": "https://api.github.com/repos/chuan0712/Google-Chrome-Portable/releases/latest",
@@ -29,7 +29,8 @@
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/Win64_${version}/Win64_${version}.zip"
+        "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/Win64_$version/Win64_$version.zip",
+        "extract_dir": "build/release/Chrome"
       }
     }
   }
