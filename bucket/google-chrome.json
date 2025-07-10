@@ -6,7 +6,7 @@
   "architecture": {
     "64bit": {
       "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/Win64_138.0.7204.101_2025-07-10/Win64_138.0.7204.101_2025-07-10.zip",
-      "hash": "sha256:22a8ad4334d6679e082d7db6f0e766f5ae5948fa7741733cec6b56e789ae581d"
+      "hash": "22a8ad4334d6679e082d7db6f0e766f5ae5948fa7741733cec6b56e789ae581d"
     }
   },
   "extract_dir": "Chrome",
