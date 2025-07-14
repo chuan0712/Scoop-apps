@@ -1,37 +1,37 @@
 {
-  "version": "138.0.7204.101_2025-07-10",
-  "description": "Google Chrome Portable",
-  "homepage": "https://www.google.com/chrome/",
-  "license": "Freeware",
-  "architecture": {
-    "64bit": {
-      "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/Win64_138.0.7204.101_2025-07-10/Win64_138.0.7204.101_2025-07-10.zip",
-      "hash": "22a8ad4334d6679e082d7db6f0e766f5ae5948fa7741733cec6b56e789ae581d",
-      "extract_dir": "build/release/Chrome"
-    }
-  },
-  "persist": [
-    "Data",
-    "Cache"
-  ],
-  "shortcuts": [
-    [
-      "chrome.exe",
-      "Google Chrome"
-    ]
-  ],
-  "checkver": {
-    "url": "https://api.github.com/repos/chuan0712/Google-Chrome-Portable/releases/latest",
-    "jsonpath": "$.tag_name",
-    "regex": "Win64_(?<version>[\\d.]+_[\\d-]+)",
-    "replace": "${version}"
-  },
-  "autoupdate": {
+    "version": "138.0.7204.101_2025-07-14",
+    "description": "Google Chrome Portable",
+    "homepage": "https://www.google.com/chrome/",
+    "license": "Freeware",
     "architecture": {
-      "64bit": {
-        "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/Win64_$version/Win64_$version.zip",
-        "extract_dir": "build/release/Chrome"
-      }
+        "64bit": {
+            "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/Win64_138.0.7204.101_2025-07-14/Win64_138.0.7204.101_2025-07-14.zip",
+            "hash": "c759d94a89398b0cf654137aabee9e973f232a03a477e28c43817e8a30266b28",
+            "extract_dir": "build/release/Chrome"
+        }
+    },
+    "persist": [
+        "Data",
+        "Cache"
+    ],
+    "shortcuts": [
+        [
+            "chrome.exe",
+            "Google Chrome"
+        ]
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/chuan0712/Google-Chrome-Portable/releases/latest",
+        "jsonpath": "$.tag_name",
+        "regex": "Win64_(?<version>[\\d.]+_[\\d-]+)",
+        "replace": "${version}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/Win64_$version/Win64_$version.zip",
+                "extract_dir": "build/release/Chrome"
+            }
+        }
     }
-  }
 }
