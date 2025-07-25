@@ -1,35 +1,31 @@
-name: Cleanup old workflows
+name: 清理旧工作流运行记录
 
 on:
   schedule:
-    - cron: '0 0 * * *' # 每天 00:00 UTC 运行
+    - cron: '0 0 * * *' # 每天 UTC 时间午夜运行
   workflow_dispatch: # 允许手动触发
 
 jobs:
-  cleanup:
+  delete_old_runs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write # 需要写入权限才能删除 workflow runs
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    - name: 获取仓库信息
+      id: repo_info
+      run: |
+        echo "OWNER=$(echo ${{ github.repository }} | cut -d'/' -f1)" >> $GITHUB_OUTPUT
+        echo "REPO=$(echo ${{ github.repository }} | cut -d'/' -f2)" >> $GITHUB_OUTPUT
 
-      - name: Install GitHub CLI
-        uses: cli/cli-action@v2
-
-      - name: Keep only last 20 workflow runs
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          echo "Keeping only the latest 20 workflow runs per workflow"
-
-          # 遍历仓库里所有的 workflow
-          gh api repos/${{ github.repository }}/actions/workflows \
-            -q '.workflows[].id' | while read wf_id; do
-              echo "Processing workflow $wf_id"
-              
-              # 获取所有 runs，跳过最新 20 条，从第 21 条开始全部删除
-              gh api repos/${{ github.repository }}/actions/workflows/$wf_id/runs \
-                --paginate -q '.workflow_runs[20:] | .[].id' | while read run_id; do
-                  echo "Deleting run $run_id"
-                  gh api repos/${{ github.repository }}/actions/runs/$run_id -X DELETE
-              done
-          done
+    - name: 删除旧的 workflow runs
+      uses: kolpav/github-action-delete-workflow-runs@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        repository: ${{ steps.repo_info.outputs.OWNER }}/${{ steps.repo_info.outputs.REPO }}
+        older-than: 7 days # 保留最近七天的记录
+        keep-minimum-runs: 0 # 不强制保留最小数量的运行记录
+        delete-skipped-runs: true # 删除跳过的运行记录
+        delete-successful-runs: true # 删除成功的运行记录
+        delete-unsuccessful-runs: true # 删除失败的运行记录
