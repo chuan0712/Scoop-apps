@@ -6,7 +6,8 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/138.0.7204.169/chrome.zip",
-            "hash": "6cc9682ddfeacb7100ce5e4c0ad252fb569016446b67186d92a9b4aa0bd7ad6a"
+            "hash": "6cc9682ddfeacb7100ce5e4c0ad252fb569016446b67186d92a9b4aa0bd7ad6a",
+            "extract_dir": "Chrome"
         }
     },
     "persist": [
