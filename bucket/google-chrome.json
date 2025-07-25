@@ -1,13 +1,12 @@
 {
-    "version": "138.0.7204.158",
+    "version": "138.0.7204.169",
     "description": "Google Chrome Portable",
     "homepage": "https://www.google.com/chrome/",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/%24TAG_NAME/Win64_138.0.7204.158_2025-07-18.zip",
-            "hash": "f9e91dd70a73080ac9d3fd5877a47e50797e119a1a02ce345a7f517bff4ce2e2",
-            "extract_dir": "build/release/Chrome"
+            "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/138.0.7204.169/chrome.zip",
+            "hash": "6cc9682ddfeacb7100ce5e4c0ad252fb569016446b67186d92a9b4aa0bd7ad6a"
         }
     },
     "persist": [
@@ -21,19 +20,16 @@
         ]
     ],
     "checkver": {
-        "github": "https://api.github.com/repos/chuan0712/Google-Chrome-Portable/releases/latest",
-        "regex": "Win64_([\\d.]+)_([\\d]{4}-[\\d]{2}-[\\d]{2})"
+        "github": "https://github.com/chuan0712/Google-Chrome-Portable"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/%24TAG_NAME/Win64_$match1_$match2.zip",
-                "hash": {
-                    "url": "$url.sha256"
-                }
+                "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/v$version/chrome.zip"
             }
         },
-        "extract_dir": "FirefoxPortable",
-        "version": "$match1"
+        "hash": {
+            "url": "$url.sha256"
+        }
     }
 }
