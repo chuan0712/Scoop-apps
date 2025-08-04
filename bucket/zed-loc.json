@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/TC999/zed-loc/releases/download/v0.197.5/zed-windows.zip",
-            "hash": "da8d79e95a73271d10b9860771015fa5540ca05823965407767cb1783cd7b177"
+            "hash": "da8d79e95a73271d10b9860771015fa5540ca05823965407767cb1783cd7b177",
             "extract_dir": "zed-release"
         }
     },
