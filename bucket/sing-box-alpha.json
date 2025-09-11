@@ -22,8 +22,8 @@
     },
     "bin": "sing-box.exe",
     "checkver": {
-        "github": "https://github.com/SagerNet/sing-box/",
-        "regex": "(?<tag>v([\\d\\.]+)-([\\w\\.]+))"
+        "github": "https://api.github.com/repos/SagerNet/sing-box/releases",
+        "regex": "/releases/tag/v(([\\d.]+)-([\\w.]+))"
 
     },
     "autoupdate": {
