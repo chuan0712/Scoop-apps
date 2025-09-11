@@ -21,11 +21,6 @@
         }
     },
     "bin": "sing-box.exe",
-    "persist": [
-        "cache",
-        "config",
-        "ui"
-    ],
     "checkver": {
         "url": "https://api.github.com/repos/SagerNet/sing-box/releases",
         "regex": "/releases/tag/v(([\\d.]+)-([\\w.]+))"
