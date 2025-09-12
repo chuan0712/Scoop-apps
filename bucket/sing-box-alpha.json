@@ -1,23 +1,23 @@
 {
-    "version": "1.13.0-alpha.12",
+    "version": "1.13.0-alpha.13",
     "description": "The universal proxy platform.",
     "homepage": "https://sing-box.sagernet.org/",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.13.0-alpha.12/sing-box-1.13.0-alpha.12-windows-amd64.zip",
-            "extract_dir": "sing-box-1.13.0-alpha.12-windows-amd64",
-            "hash": "6bc920e387fa68f64d10e2792a6ecdb00faba232e2fed39f143b92dcd7e5d28f"
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.13.0-alpha.13/sing-box-1.13.0-alpha.13-windows-amd64.zip",
+            "extract_dir": "sing-box-1.13.0-alpha.13-windows-amd64",
+            "hash": "c96068bb21deeba8468410cc1794b492435699d41bc5dcde323555036a30bca8"
         },
         "32bit": {
-            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.13.0-alpha.12/sing-box-1.13.0-alpha.12-windows-386.zip",
-            "extract_dir": "sing-box-1.13.0-alpha.12-windows-386",
-            "hash": "ea7770fdb0aa55b8834742c71607bdcec317facdf7058eb001e0bf8c42f5d0cb"
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.13.0-alpha.13/sing-box-1.13.0-alpha.13-windows-386.zip",
+            "extract_dir": "sing-box-1.13.0-alpha.13-windows-386",
+            "hash": "df4817ffdda21df087b1138194dba2fbe41e4de43d0cca4bf7d3a1bfdc336951"
         },
         "arm64": {
-            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.13.0-alpha.12/sing-box-1.13.0-alpha.12-windows-arm64.zip",
-            "extract_dir": "sing-box-1.13.0-alpha.12-windows-arm64",
-            "hash": "375049a2f74ffee4103e043d59c7f08542ad5888687b2df89941afa12351ebbf"
+            "url": "https://github.com/SagerNet/sing-box/releases/download/v1.13.0-alpha.13/sing-box-1.13.0-alpha.13-windows-arm64.zip",
+            "extract_dir": "sing-box-1.13.0-alpha.13-windows-arm64",
+            "hash": "5f0dd42c5d33afc2e62823eeb91d3abc2b1dde590bfe216376bc88077644a9ca"
         }
     },
     "bin": "sing-box.exe",
