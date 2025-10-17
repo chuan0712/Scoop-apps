@@ -19,7 +19,7 @@
             "chrome.exe",
             "Google Chrome"
         ]
-    ]，
+    ],
     "checkver": {
         "github": "https://github.com/chuan0712/Google-Chrome-Portable"
     },
@@ -28,9 +28,9 @@
             "64bit": {
                 "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/$version/Chrome.zip"
             }
-        }，
+        },
         "hash": {
-            "url": "$url.sha256"
+            "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/$version/sha256.txt"
         }
     }
 }
