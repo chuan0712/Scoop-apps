@@ -1,87 +1,36 @@
-name: build
-
-on:
-  workflow_dispatch:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  schedule:
-    - cron: "0 8 * * 1"
-
-jobs:
-  Warp_Chrome:
-    runs-on: ubuntu-latest
-    steps:
-      # 拉取代码
-      - uses: actions/checkout@v4
-
-      # 设置 Python 环境
-      - uses: actions/setup-python@v4.7.1
-        with:
-          python-version: '3.10'
-
-      # 打印项目结构
-      - name: Show files
-        run: ls -al
-
-      # 安装依赖并运行脚本
-      - name: Prepare environment
-        run: |
-          python3 -m pip install -r requirements.txt
-          python3 run.py
-
-      # 设置 Git 身份（用于 tag）
-      - name: Configure git user
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-
-      # 提取版本号并创建 tag（如未存在）
-      - name: Extract version and create tag
-        id: versioning
-        run: |
-          VERSION=$(echo "${{ env.BUILD_NAME }}" | grep -oP '\d+\.\d+\.\d+\.\d+')
-          echo "VERSION=$VERSION"
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
-          echo "tag_name=$VERSION" >> $GITHUB_OUTPUT
-
-          if git ls-remote --tags origin | grep -q "refs/tags/$VERSION"; then
-            echo "⚠️ Tag $VERSION already exists. Skipping release step."
-            echo "SKIP_RELEASE=true" >> $GITHUB_ENV
-          else
-            git tag -a "$VERSION" -m "Release $VERSION"
-            git push origin "$VERSION"
-          fi
-
-      # 打包为 Chrome.zip
-      - name: Create zip archive
-        run: |
-          cd build/release
-          zip -r ../../Chrome.zip *
-          cd ../../
-          echo "Zip created:"
-          ls -al Chrome.zip
-
-      # 新增步骤：计算 Chrome.zip 的 MD5 并写入 md5.txt
-      - name: Create MD5 checksum file
-        run: |
-          # 使用 md5sum 计算 Chrome.zip 的 MD5，并将结果重定向到 md5.txt
-          md5sum Chrome.zip > md5.txt
-          echo "MD5 checksum created:"
-          cat md5.txt
-          ls -al md5.txt
-
-      # 创建 GitHub Release，仅在 tag 不存在时执行
-      - name: Create GitHub release
-        if: env.SKIP_RELEASE != 'true'
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: ${{ steps.versioning.outputs.tag_name }}
-          name: ${{ env.BUILD_NAME }}
-          # 🚨 更改这里：同时包含 Chrome.zip 和 md5.txt
-          files: |
-            Chrome.zip
-            md5.txt
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+{
+    "version": "141.0.7390.77",
+    "description": "Google Chrome Portable",
+    "homepage": "https://www.google.com/chrome/",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/141.0.7390.77/Chrome.zip",
+            "hash": "e548ac48f9e2f0a5d33cfa9b2a07e0bc90dc41cbfb998c728a502676434192f4",
+            "extract_dir": "Chrome"
+        }
+    },
+    "persist": [
+        "Data",
+        "Cache"
+    ],
+    "shortcuts": [
+        [
+            "chrome.exe",
+            "Google Chrome"
+        ]
+    ]，
+    "checkver": {
+        "github": "https://github.com/chuan0712/Google-Chrome-Portable"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/$version/Chrome.zip"
+            }
+        }，
+        "hash": {
+            "url": "$url.sha256"
+        }
+    }
+}
