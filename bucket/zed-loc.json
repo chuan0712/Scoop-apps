@@ -18,8 +18,7 @@
         ]
     ],
     "checkver": {
-        "url": "https://github.com/TC999/zed-loc/releases",
-        "regex": "v(\\d+\\.\\d+\\.\\d+)"
+        "github": "https://github.com/TC999/zed-loc",
     },
     "autoupdate": {
         "url": "https://github.com/TC999/zed-loc/releases/download/v$version/zed-windows.zip",
