@@ -24,6 +24,28 @@
         }
     },
     "bin": "sing-box.exe",
+    "post_install": [
+        "New-Item -ItemType Directory -Path $persist_dir -Force | Out-Null",
+        "$items = @('config.json','cache.db','ui')",
+        "foreach ($item in $items) {",
+        "    $src = Join-Path $dir $item",
+        "    $dst = Join-Path $persist_dir $item",
+        "    if (Test-Path $src) {",
+        "        if (-not (Test-Path $dst)) {",
+        "            Move-Item $src $dst -Force",
+        "        } else {",
+        "            Remove-Item $src -Recurse -Force",
+        "        }",
+        "    }",
+        "    if (-not (Test-Path $src) -and (Test-Path $dst)) {",
+        "        if ((Get-Item $dst).PSIsContainer) {",
+        "            New-Item -ItemType Junction -Path $src -Target $dst | Out-Null",
+        "        } else {",
+        "            New-Item -ItemType HardLink -Path $src -Target $dst | Out-Null",
+        "        }",
+        "    }",
+        "}"
+    ],
     "persist": [
         "config.json",
         "cache.db",
