@@ -10,41 +10,23 @@
         "64bit": {
             "url": "https://github.com/SagerNet/sing-box/releases/download/v1.13.0-alpha.30/sing-box-1.13.0-alpha.30-windows-amd64.zip",
             "extract_dir": "sing-box-1.13.0-alpha.30-windows-amd64",
-            "hash": "43dd308561972b0ad0a711cab16198e62d944f84a337ba5930c62e37a4c4fe0c"
+            "hash": "036ec4c35b80faebd6b11eda964e6c678a690358d5f76a52ce530ac0647455ce"
         },
         "32bit": {
             "url": "https://github.com/SagerNet/sing-box/releases/download/v1.13.0-alpha.30/sing-box-1.13.0-alpha.30-windows-386.zip",
             "extract_dir": "sing-box-1.13.0-alpha.30-windows-386",
-            "hash": "af08ca9fba56208d277aebc98d06004a85b2d5ada787851757f4598421afc5fb"
+            "hash": "e50f1e843191a280fa28feab2cba3ed34f9072f3b5a8189e5bc2936a17de0b94"
         },
         "arm64": {
             "url": "https://github.com/SagerNet/sing-box/releases/download/v1.13.0-alpha.30/sing-box-1.13.0-alpha.30-windows-arm64.zip",
             "extract_dir": "sing-box-1.13.0-alpha.30-windows-arm64",
-            "hash": "86e2cbb9e79a1a6875653993b7ef864a5845864312332796cdb783f5a6c59e9c"
+            "hash": "33fc9f76448412d2c4561add14ad8abe2247a46cef57b7ddc54fd34a5dda791b"
         }
     },
     "bin": "sing-box.exe",
     "post_install": [
-        "New-Item -ItemType Directory -Path $persist_dir -Force | Out-Null",
-        "$items = @('config.json','cache.db','ui')",
-        "foreach ($item in $items) {",
-        "    $src = Join-Path $dir $item",
-        "    $dst = Join-Path $persist_dir $item",
-        "    if (Test-Path $src) {",
-        "        if (-not (Test-Path $dst)) {",
-        "            Move-Item $src $dst -Force",
-        "        } else {",
-        "            Remove-Item $src -Recurse -Force",
-        "        }",
-        "    }",
-        "    if (-not (Test-Path $src) -and (Test-Path $dst)) {",
-        "        if ((Get-Item $dst).PSIsContainer) {",
-        "            New-Item -ItemType Junction -Path $src -Target $dst | Out-Null",
-        "        } else {",
-        "            New-Item -ItemType HardLink -Path $src -Target $dst | Out-Null",
-        "        }",
-        "    }",
-        "}"
+        "if(!(Test-Path \"$persist_dir\\config.json\")) { New-Item \"$dir\\config.json\" -ItemType File -Force | Out-Null }",
+        "if(!(Test-Path \"$persist_dir\\cache.db\")) { New-Item \"$dir\\cache.db\" -ItemType File -Force | Out-Null }"
     ],
     "persist": [
         "config.json",
