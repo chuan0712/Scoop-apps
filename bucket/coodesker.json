@@ -1,13 +1,13 @@
 {
-    "version": "2.2.1.6",
+    "version": "2.2.1.7",
     "description": "Coodesker. Automatically organize your desktop shortcuts icons and running tasks.",
     "homepage": "https://www.coodesker.com/",
     "license": "Freeware",
     "changelog": "https://github.com/coodesker/coodesker-desktop/releases",
     "architecture": {
         "64bit": {
-            "url": "https://down.coodesker.com/coodesker-desktop/Coodesker-x64_2.2.1.6.exe",
-            "hash": "9d349bb9b19603ef58d44ca994741f7727df4a361aa09d4be6f3cdd5d28427eb",
+            "url": "https://down.coodesker.com/coodesker-desktop/Coodesker-x64_2.2.1.7.exe",
+            "hash": "4d2c76d0728665a8bcfaa5059f7cbfd19ea94b56c7e8ea09656dc846bd0ce1f1",
             "pre_install": "Rename-Item -Path \"$dir\\coodesker-x64_$version.exe\" -NewName 'coodesker.exe'"
         },
         "arm64": {
