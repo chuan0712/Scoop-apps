@@ -17,7 +17,7 @@
     },
     "bin": [
         ["QDjob.cmd", "qd"],
-        ["QDjob_editor.cmd", "qd-e"]
+        ["QDjob_editor.cmd", "qd -e"]
     ],
     "pre_install": [
         "$qd = @'\r\n@echo off\r\ncd /d \"%~dp0\"\r\nstart \"\" \"%~dp0QDjob_windows.exe\"\r\n'@",
