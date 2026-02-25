@@ -1,28 +1,42 @@
 {
-    "version": "1.2.5",
+    "version": "1.2.6",
     "description": "起点阅读自动化任务",
     "homepage": "https://github.com/JaniQuiz/QDjob",
     "license": "GPL-3.0",
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/JaniQuiz/QDjob/releases/download/QDjob_v1.2.5/QDjob_editor_windows.exe",
-                "https://github.com/JaniQuiz/QDjob/releases/download/QDjob_v1.2.5/QDjob_windows.exe"
+                "https://github.com/JaniQuiz/QDjob/releases/download/QDjob_v1.2.6/QDjob_editor_windows.exe#/QDjob_editor.exe",
+                "https://github.com/JaniQuiz/QDjob/releases/download/QDjob_v1.2.6/QDjob_windows.exe#/QDjob.exe"
             ],
             "hash": [
-                "sha256:440be4ac1206635da75610e9952d53c388b838b2f669f94044c9460b71aff717",
-                "sha256:162ed7b82bd3259ab3febd3d434424762f0cdd3dfa1dc3d89c7bb61b03c486a1"
+                "74b925309b8d488f39afa3b3049f1afb287aead9befba10d30b365ed4cb79cb4",
+                "47adb5a9173106416448ec2a9f64eb7f0257969d98d9968a50abfefeee585a62"
             ]
         }
     },
     "bin": [
-        ["QDjob.cmd", "qd"],
-        ["QDjob_editor.cmd", "qd -e"]
+        [
+            "QDjob.cmd",
+            "qd"
+        ],
+        [
+            "QDjob_editor.cmd",
+            "qd -e"
+        ]
     ],
     "pre_install": [
-        "$qd = @'\r\n@echo off\r\ncd /d \"%~dp0\"\r\nstart \"\" \"%~dp0QDjob_windows.exe\"\r\n'@",
+        "$qd = @'
+@echo off
+cd /d \"%~dp0\"
+start \"\" \"%~dp0QDjob_windows.exe\"
+'@",
         "Set-Content -Encoding ASCII \"$dir\\QDjob.cmd\" $qd",
-        "$qde = @'\r\n@echo off\r\ncd /d \"%~dp0\"\r\nstart \"\" \"%~dp0QDjob_editor_windows.exe\"\r\n'@",
+        "$qde = @'
+@echo off
+cd /d \"%~dp0\"
+start \"\" \"%~dp0QDjob_editor_windows.exe\"
+'@",
         "Set-Content -Encoding ASCII \"$dir\\QDjob_editor.cmd\" $qde"
     ],
     "persist": [
