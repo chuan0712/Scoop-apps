@@ -26,17 +26,9 @@
         ]
     ],
     "pre_install": [
-        "$qd = @'
-@echo off
-cd /d \"%~dp0\"
-start \"\" \"%~dp0QDjob_windows.exe\"
-'@",
+        "$qd = @'\r\n@echo off\r\ncd /d \"%~dp0\"\r\nstart \"\" \"%~dp0QDjob_windows.exe\"\r\n'@",
         "Set-Content -Encoding ASCII \"$dir\\QDjob.cmd\" $qd",
-        "$qde = @'
-@echo off
-cd /d \"%~dp0\"
-start \"\" \"%~dp0QDjob_editor_windows.exe\"
-'@",
+        "$qde = @'\r\n@echo off\r\ncd /d \"%~dp0\"\r\nstart \"\" \"%~dp0QDjob_editor_windows.exe\"\r\n'@",
         "Set-Content -Encoding ASCII \"$dir\\QDjob_editor.cmd\" $qde"
     ],
     "persist": [
