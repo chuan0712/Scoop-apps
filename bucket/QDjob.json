@@ -9,9 +9,11 @@
             "hash": "7b3a3cc23f3d391310e986e06ea911d9f7d33a59fc418e88528479739607e5ad"
         }
     },
-    "bin": [
-        ["QDjob.exe", "qd"]
+    "pre_install": [
+        "Set-Content -Path \"$dir\\qd.ps1\" -Value \"Set-Location $dir; .\\QDjob.exe $args\""
     ],
+    "bin": "qd.ps1",
+
     "persist": [
         "cookies",
         "logs",
