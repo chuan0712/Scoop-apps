@@ -1,12 +1,12 @@
 {
-    "version": "145.0.7632.117",
+    "version": "145.0.7632.160",
     "description": "Google Chrome Portable",
     "homepage": "https://www.google.com/chrome/",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/145.0.7632.117/Chrome.zip",
-            "hash": "04493c59055aca382778af9fde849653f7e6be732a8c047775902dd56f66eb96",
+            "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/145.0.7632.160/Chrome.zip",
+            "hash": "96eadb0088e53aec801ea0a3b8c8f601a9410ca749083e49e5fea6eda0c1a133",
             "extract_dir": "Chrome"
         }
     },
