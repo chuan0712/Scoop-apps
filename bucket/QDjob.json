@@ -21,8 +21,7 @@
         "config.json"
     ],
     "checkver": {
-        "github": "qdjob/QDjob",
-        "regex": "QDjob_v([\\d.]+)"
+        "github": "https://github.com/qdjob/QDjob"
     },
     "autoupdate": {
         "architecture": {
