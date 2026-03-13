@@ -1,13 +1,12 @@
 {
-    "version": "145.0.7632.160",
+    "version": "146.0.7680.76",
     "description": "Google Chrome Portable",
     "homepage": "https://www.google.com/chrome/",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/145.0.7632.160/Chrome.zip",
-            "hash": "96eadb0088e53aec801ea0a3b8c8f601a9410ca749083e49e5fea6eda0c1a133",
-            "extract_dir": "Chrome"
+            "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/v146.0.7680.76/chrome-windows-amd64.7z",
+            "hash": "a37aae9348436e4d1ad8dc1618447cd6bc41da807ecf3e1d3cde465e72162f90"
         }
     },
     "persist": [
@@ -26,11 +25,8 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/$version/Chrome.zip"
+                "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/v$version/chrome-windows-amd64.7z"
             }
-        },
-        "hash": {
-            "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/$version/sha256.txt"
         }
     }
 }
