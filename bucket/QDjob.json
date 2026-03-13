@@ -13,7 +13,6 @@
         "Set-Content -Path \"$dir\\qd.ps1\" -Value \"Set-Location $dir; .\\QDjob.exe $args\""
     ],
     "bin": "qd.ps1",
-
     "persist": [
         "cookies",
         "logs",
