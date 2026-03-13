@@ -6,7 +6,8 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/v146.0.7680.76/chrome-windows-amd64.7z",
-            "hash": "a37aae9348436e4d1ad8dc1618447cd6bc41da807ecf3e1d3cde465e72162f90"
+            "hash": "a37aae9348436e4d1ad8dc1618447cd6bc41da807ecf3e1d3cde465e72162f90",
+            "extract_dir": "Chrome"
         }
     },
     "persist": [
