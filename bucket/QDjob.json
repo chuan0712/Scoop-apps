@@ -5,8 +5,8 @@
     "license": "GPL-3.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/qdjob/QDjob/releases/download/QDjob_v1.3.0/QDjob_windows.zip",
-            "hash": "7b3a3cc23f3d391310e986e06ea911d9f7d33a59fc418e88528479739607e5ad"
+            "url": "https://github.com/qdjob/QDjob/releases/download/QDjob_v1.3.1/QDjob_windows.zip",
+            "hash": "48e7f1fe24384c8deaf324925c0b7764a09a60ce96187149a73d74bb4822aa5e"
         }
     },
     "pre_install": [
