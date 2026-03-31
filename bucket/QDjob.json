@@ -1,17 +1,15 @@
 {
-    "version": "1.3.1",
+    "version": "1.3.2",
     "description": "起点阅读自动化任务",
     "homepage": "https://github.com/qdjob/QDjob",
     "license": "GPL-3.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/qdjob/QDjob/releases/download/QDjob_v1.3.1/QDjob_windows.zip",
-            "hash": "48e7f1fe24384c8deaf324925c0b7764a09a60ce96187149a73d74bb4822aa5e"
+            "url": "https://github.com/qdjob/QDjob/releases/download/QDjob_v1.3.2/QDjob_windows.zip",
+            "hash": "b8146434ffeea026b94cff0a112ac1a1236eda3fc12c218c70e1798ff826f7e4"
         }
     },
-    "pre_install": [
-        "Set-Content -Path \"$dir\\qd.ps1\" -Value \"Set-Location $dir; .\\QDjob.exe $args\""
-    ],
+    "pre_install": "Set-Content -Path \"$dir\\qd.ps1\" -Value \"Set-Location $dir; .\\QDjob.exe $args\"",
     "bin": "qd.ps1",
     "persist": [
         "cookies",
