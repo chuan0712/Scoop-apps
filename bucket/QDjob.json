@@ -20,7 +20,8 @@
         "config.json"
     ],
     "checkver": {
-        "github": "https://github.com/qdjob/QDjob"
+        "github": "https://github.com/qdjob/QDjob",
+        "regex": "QDjob_v([\\d.]+)"
     },
     "autoupdate": {
         "architecture": {
