@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/qdjob/QDjob/releases/download/QDjob_v1.3.2/QDjob_windows.zip",
-            "hash": "b8146434ffeea026b94cff0a112ac1a1236eda3fc12c218c70e1798ff826f7e4"
+            "hash": "4eb11269f5742629deb0a6afceac630c6dcc40d97f923fbea76927299ecaf7e4"
         }
     },
     "pre_install": "Set-Content -Path \"$dir\\qd.ps1\" -Value \"Set-Location $dir; .\\QDjob.exe $args\"",
