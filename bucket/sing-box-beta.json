@@ -35,8 +35,6 @@
     ],
     "bin": "sing-box.exe",
     "persist": [
-        "config",
-        "config.d",
         "config.json",
         "cache.db",
         "ui"
