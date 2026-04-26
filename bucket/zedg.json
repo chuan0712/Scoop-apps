@@ -13,13 +13,7 @@
             "hash": "c2f59a629edaf63ca21c2f66eb1a2679a08ccca2ed0b55d86f9faa528dccb1fb"
         }
     },
-    "installer": {
-        "script": [
-            "Expand-InnoArchive -Path \"$dir\\$fname\" -ExtractDir '{app}'",
-            "Expand-InnoArchive -Path \"$dir\\$fname\" -ExtractDir '{code_GetInstallDir}' -Removal"
-        ]
-    },
-    "bin": "bin\\ZedG.exe",
+    "bin": "ZedG.exe",
     "shortcuts": [
         [
             "ZedG.exe",
