@@ -14,15 +14,30 @@
         }
     },
     "post_install": [
+        "# 处理 AppData\\Roaming\\Zed (配置和用户数据)",
         "if (Test-Path $env:APPDATA\\Zed) {",
-        "    Copy-Item -Path $env:APPDATA\\Zed\\* -Destination \"$persist_dir\\data\" -Force -Recurse",
+        "    Copy-Item -Path $env:APPDATA\\Zed\\* -Destination \"$persist_dir\\roaming\" -Force -Recurse",
         "    Remove-Item $env:APPDATA\\Zed -Force -Recurse",
         "}",
-        "New-Item -ItemType Junction -Path $env:APPDATA\\Zed -Target $persist_dir\\data | Out-Null"
+        "New-Item -ItemType Junction -Path $env:APPDATA\\Zed -Target \"$persist_dir\\roaming\" | Out-Null",
+        "",
+        "# 处理 AppData\\Local\\Zed (缓存和临时数据)",
+        "if (Test-Path $env:LOCALAPPDATA\\Zed) {",
+        "    Copy-Item -Path $env:LOCALAPPDATA\\Zed\\* -Destination \"$persist_dir\\local\" -Force -Recurse",
+        "    Remove-Item $env:LOCALAPPDATA\\Zed -Force -Recurse",
+        "}",
+        "New-Item -ItemType Junction -Path $env:LOCALAPPDATA\\Zed -Target \"$persist_dir\\local\" | Out-Null"
     ],
     "uninstaller": {
-        "script": "Remove-Item $env:APPDATA\\Zed -Force -Recurse"
+        "script": [
+            "Remove-Item $env:APPDATA\\Zed -Force -Recurse -ErrorAction SilentlyContinue",
+            "Remove-Item $env:LOCALAPPDATA\\Zed -Force -Recurse -ErrorAction SilentlyContinue"
+        ]
     },
+    "persist": [
+        "roaming",
+        "local"
+    ],
     "bin": "ZedG.exe",
     "shortcuts": [
         [
@@ -30,7 +45,6 @@
             "ZedG"
         ]
     ],
-    "persist": "data",
     "checkver": {
         "github": "https://github.com/x6nux/zed-globalization"
     },
