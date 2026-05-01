@@ -13,6 +13,16 @@
             "hash": "fa54271ef379fca3cd5847640d3c2874fc7dfefa8ae228260cee35aeed32262b"
         }
     },
+    "post_install": [
+        "if (Test-Path $env:APPDATA\\Zed) {",
+        "    Copy-Item -Path $env:APPDATA\\Zed\\* -Destination \"$persist_dir\\data\" -Force -Recurse",
+        "    Remove-Item $env:APPDATA\\Zed -Force -Recurse",
+        "}",
+        "New-Item -ItemType Junction -Path $env:APPDATA\\Zed -Target $persist_dir\\data | Out-Null"
+    ],
+    "uninstaller": {
+        "script": "Remove-Item $env:APPDATA\\Zed -Force -Recurse"
+    },
     "bin": "ZedG.exe",
     "shortcuts": [
         [
@@ -20,6 +30,7 @@
             "ZedG"
         ]
     ],
+    "persist": "data",
     "checkver": {
         "github": "https://github.com/x6nux/zed-globalization"
     },
