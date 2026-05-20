@@ -38,8 +38,7 @@
         "config",
         "config.d",
         "config.json",
-        "cache.db",
-        "ui"
+        "cache.db"
     ],
     "checkver": {
         "url": "https://api.github.com/repos/SagerNet/sing-box/releases",
