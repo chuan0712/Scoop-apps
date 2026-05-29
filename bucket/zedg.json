@@ -14,13 +14,7 @@
             "hash": "b4a6fac12faaa2ca188ccf3fc18bc68df93623993af0e292ff917c42cbaf2055"
         }
     },
-    "installer": {
-        "script": [
-            "Remove-Item $env:APPDATA\\Zed -Force -Recurse -ErrorAction SilentlyContinue",
-            "Remove-Item $env:LOCALAPPDATA\\Zed -Force -Recurse -ErrorAction SilentlyContinue"
-        ]
-    },
-    "bin": "bin\\ZedG.exe",
+    "bin": "bin\\zedg.exe",
     "shortcuts": [
         [
             "ZedG.exe",
