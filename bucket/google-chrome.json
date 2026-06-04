@@ -1,12 +1,12 @@
 {
-    "version": "148.0.7778.217",
+    "version": "149.0.7827.54",
     "description": "Google Chrome Portable",
     "homepage": "https://www.google.com/chrome/",
     "license": "Freeware",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/v148.0.7778.217/chrome-windows-amd64.7z",
-            "hash": "c32781f88a6c3f4e43363e0fde25d945388162ea9d8a8d14303b8522beefa4f6",
+            "url": "https://github.com/chuan0712/Google-Chrome-Portable/releases/download/v149.0.7827.54/chrome-windows-amd64.7z",
+            "hash": "6240f4322b80f0b7eed11829f12b7b3895a9b5c7456ee45dab186c44e5e1a4c8",
             "extract_dir": "Chrome"
         }
     },
